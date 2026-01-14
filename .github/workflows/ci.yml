@@ -2,7 +2,7 @@ name: CI Churrascaria
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master" ]  # Lembre que mudamos para master
 
 jobs:
   build:
@@ -25,3 +25,8 @@ jobs:
     - name: Testar Qualidade do Código
       run: |
         pylint --disable=C,R,W app.py
+
+    # NOVO PASSO AQUI:
+    - name: Construir Imagem Docker 🐳
+      run: |
+        docker build -t smartgrill:v1 .

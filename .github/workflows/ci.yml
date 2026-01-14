@@ -2,7 +2,7 @@ name: CI Churrascaria
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
 jobs:
   build:
